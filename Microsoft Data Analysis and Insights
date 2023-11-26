@@ -1,0 +1,61 @@
+-- SQL script for Microsoft Data Analysis and Insights
+
+-- Description: Conducted data analysis and provided insights for Microsoft projects in collaboration with Cambay Consulting Project Solutions.
+
+-- Create a table to store project data
+CREATE TABLE MicrosoftProjects (
+    ProjectID INT PRIMARY KEY,
+    ProjectName VARCHAR(255),
+    ProjectDescription TEXT,
+    StartDate DATE,
+    EndDate DATE,
+    ProjectManager VARCHAR(255)
+);
+
+-- Insert project data
+INSERT INTO MicrosoftProjects (ProjectID, ProjectName, ProjectDescription, StartDate, EndDate, ProjectManager)
+VALUES
+    (1, 'Azure Cloud Migration', 'Migrating on-premises applications to Azure cloud.', '2023-01-15', '2023-02-28', 'John Smith'),
+    (2, 'Power BI Dashboard Development', 'Creating interactive dashboards for data visualization.', '2023-02-01', '2023-03-15', 'Emily Davis'),
+    (3, 'SQL Server Performance Tuning', 'Optimizing SQL Server database performance.', '2023-03-10', '2023-04-30', 'Michael Johnson'),
+    (4, 'SharePoint Collaboration Platform', 'Implementing SharePoint for team collaboration.', '2023-04-05', '2023-06-15', 'Sarah Brown');
+
+-- Create a table to store data analysis results
+CREATE TABLE DataAnalysisResults (
+    AnalysisID INT PRIMARY KEY,
+    ProjectID INT,
+    AnalysisDate DATE,
+    AnalysisSummary TEXT
+);
+
+-- Insert data analysis results
+INSERT INTO DataAnalysisResults (AnalysisID, ProjectID, AnalysisDate, AnalysisSummary)
+VALUES
+    (1, 1, '2023-02-15', 'Identified cost savings opportunities through Azure cloud migration.'),
+    (2, 2, '2023-03-05', 'Developed interactive Power BI dashboards for real-time data insights.'),
+    (3, 3, '2023-04-20', 'Improved SQL Server performance by 30% through query optimization.'),
+    (4, 4, '2023-05-10', 'Successfully deployed SharePoint for seamless team collaboration.');
+
+-- Create a table to store insights and recommendations
+CREATE TABLE InsightsRecommendations (
+    InsightID INT PRIMARY KEY,
+    AnalysisID INT,
+    InsightDescription TEXT
+);
+
+-- Insert insights and recommendations
+INSERT INTO InsightsRecommendations (InsightID, AnalysisID, InsightDescription)
+VALUES
+    (1, 1, 'Recommend optimizing virtual machine configurations for cost reduction.'),
+    (2, 2, 'Suggest creating drill-through reports for deeper data exploration in Power BI.'),
+    (3, 3, 'Propose regular database maintenance and indexing for sustained performance.'),
+    (4, 4, 'Advise conducting SharePoint training sessions for team members.');
+
+-- Display project data
+SELECT * FROM MicrosoftProjects;
+
+-- Display data analysis results
+SELECT * FROM DataAnalysisResults;
+
+-- Display insights and recommendations
+SELECT * FROM InsightsRecommendations;
